@@ -1,33 +1,4 @@
-print("Welcome to Treasure Island.")
-print("Your mission is to find the treasure.")
-print("""
-                     .--._..--.
-              ___   ( _'-_  -_.'
-          _.-'   `-._|  - :- |
-      _.-'           `--...__|
-   .-'                       '--..___
-  / `._                              \
-   `. `._                             |
-     `. `._                           /
-       '. `._    :__________....-----'
-         `..`---'    |-_  _- |___...----..._
-                     |_....--'             `.`.
-               _...--'                       `.`.
-          _..-'                            _.'.'
-       .-'                               _.'.'
-       |                               _.'.'
-       |                   __....------'-'
-       |     __...------''' _|
-       '--'''        |-  - _ |
-                     | _   - |
-                     | _   - |
-                     |   -  _|
-                     | _   - |
-                     |   -  _|
-""")
-test1 = input('You\'re at a cross road. Where do you want to go? Type "left" or "right" \n').lower()
-if test1 == "left":
-    print("""
+lake = r"""
                                                                      .
                                      .
           ,d88b,                                     .                   __..-
@@ -43,10 +14,9 @@ if test1 == "left":
      -    ~-~_~ _./d88P/\?I:'.   /WI:.                ::.        \ .
           ~-~-,-~' ~~~ / )------'WI:.____ _.d88P_____::::.        \
    _       ,-'  .     /
-    """)
-    test2 = input('You\'ve come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across. \n').lower()
-    if test2 == "wait":
-        print('''
+"""
+
+house = r"""
    _________________________________________________________________________________________
   |     -_-                                             _-                              _-  |
   |_-_- _                                         -_- _-                          -_- _-   -|
@@ -65,12 +35,10 @@ if test1 == "left":
   |  | /        __-- _   |   _- _ -  | /        __--_    |   _- _ -  | /        __--_    |  |
   |__|/__________________|___________|/__________________|___________|/__________________|__|
                                                _ -                              -_-  -_ 
-    -_- _ -             _- _---                       -_-  -_           _ -   
-        ''')
-        test3 = input("You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose? \n").lower()
-        if test3 == "yellow":
-            print("You found the treasure! You Win!")
-            print('''
+    -_- _ -             _- _---                       -_-  -_           _ -  
+"""
+
+treasure = r'''
 *******************************************************************************
           |                   |                  |                     |
  _________|________________.=""_;=.______________|_____________________|_______
@@ -83,7 +51,7 @@ if test1 == "left":
           |           |o`"=._` , "` `; .". ,  "-._"-._; ;              |
  _________|___________| ;`-.o`"=._; ." ` '`."\` . "-._ /_______________|_______
 |                   | |o;    `"-.o`"=._``  '` " ,__.--o;   |
-|___________________|_| ;     (#) `-.o `"=.`_.--"_o.-; ;___|___________________
+|___________________|_| ;     ( ) `-.o `"=.`_.--"_o.-; ;___|___________________
 ____/______/______/___|o;._    "      `".o|o_.--"    ;o;____/______/______/____
 /______/______/______/_"=._o--._        ; | ;        ; ;/______/______/______/_
 ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
@@ -91,10 +59,9 @@ ____/______/______/______/__"=._o--._   ;o|o;     _._;o;____/______/______/____
 ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 /______/______/______/______/______/______/______/______/______/______/______/_
 *******************************************************************************
-            ''')
-        elif test3 == "red":
-            print("It's a room full of fire. Game Over.")
-            print('''
+'''
+
+fire = r"""
                         (  .      )
         )           (              )
               .  '   .   '  .  '  .
@@ -103,42 +70,11 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
    ). , ( .   (  ) ( , ')  .' (  ,    )
   (_,) . ), ) _) _,')  (, ) '. )  ,. (' )
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-            ''')
-        elif test3 == "blue":
-            print("You enter a room of beasts. Game Over.")
-            print("""
-                                              ,--,  ,.-.
-                ,                   \,       '-,-`,'-.' | ._
-               /|           \    ,   |\         }  )/  / `-,',
-               [ '          |\  /|   | |        /  \|  |/`  ,`
-               | |       ,.`  `,` `, | |  _,...(   (      _',
-               \  \  __ ,-` `  ,  , `/ |,'      Y     (   \_L\
-                \  \_\,``,   ` , ,  /  |         )         _,/
-                 \  '  `  ,_ _`_,-,<._.<        /         /
-                  ', `>.,`  `  `   ,., |_      |         /
-                    \/`  `,   `   ,`  | /__,.-`    _,   `\
-                -,-..\  _  \  `  /  ,  / `._) _,-\`       \
-                 \_,,.) /\    ` /  / ) (-,, ``    ,        |
-                ,` )  | \_\       '-`  |  `(               \
-               /  /```(   , --, ,' \   |`<`    ,            |
-              /  /_,--`\   <\  V /> ,` )<_/)  | \      _____)
-        ,-, ,`   `   (_,\ \    |   /) / __/  /   `----`
-       (-, \           ) \ ('_.-._)/ /,`    /
-       | /  `          `/ \\ V   V, /`     /
-    ,--\(        ,     <_/`\\     ||      /
-   (   ,``-     \/|         \-A.A-`|     /
-  ,>,_ )_,..(    )\          -,,_-`  _--`
- (_ \|`   _,/_  /  \_            ,--`
-  \( `   <.,../`     `-.._   _,-`
-   `                      ```
-            """)
-        else:
-            print("You chose a door that doesn't exist. Game Over.")
-    else:
-        print("You get attacked by a lake serpent. Game Over.")
-        print('''
+"""
+
+serpent = r"""
                           _,..,,,_
-                     '``````^~"-,_`"-,_
+                     '``````^~ -,_` -,_
        .-~c~-.                    `~:. ^-.
    `~~~-.c    ;                      `:.  `-,     _.-~~^^~:.
          `.   ;      _,--~~~~-._       `:.   ~. .~          `.
@@ -149,16 +85,41 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
         `-.__,-~                  ~-.        ,' ':    '.__.`    :'
                                      ~--..--'     ':.         .:'
                                                      ':..___.:'
-        ''')
-else:
-    print("You fell into a trapdoor. Game Over.")
-    print('''
+"""
+
+trapdoor = r"""
      __________
     /`.`^%===_/
     `. `\ 
       `. `. 
         `./
-    ''')
+"""
+
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.")
+test1 = input('You\'re at a cross road. Where do you want to go? Type "left" or "right" \n').lower()
+if test1 == "left":
+    print(lake)
+    test2 = input('You\'ve come to a lake. There is an island in the middle of the lake. Type "wait" to wait for a boat. Type "swim" to swim across. \n').lower()
+    if test2 == "wait":
+        print(house)
+        test3 = input("You arrive at the island unharmed. There is a house with 3 doors. One red, one yellow and one blue. Which colour do you choose? \n").lower()
+        if test3 == "yellow":
+            print("You found the treasure! You Win!")
+            print(treasure)
+        elif test3 == "red":
+            print("It's a room full of fire. Game Over.")
+            print(fire)
+        elif test3 == "blue":
+            print("You enter a room of beasts. Game Over.")
+        else:
+            print("You chose a door that doesn't exist. Game Over.")
+    else:
+        print("You get attacked by a lake serpent. Game Over.")
+        print(serpent)
+else:
+    print("You fell into a trapdoor. Game Over.")
+    print(trapdoor)
 #https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
 
 
