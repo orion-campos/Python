@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32819.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "FizzBuzz", "FizzBuzz.pyproj", "{C5683FBC-9DD3-4139-843C-D9262AB5D3BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5683FBC-9DD3-4139-843C-D9262AB5D3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5683FBC-9DD3-4139-843C-D9262AB5D3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F3A83C03-7DD5-4E0E-9C1E-4D93D0A1ADA2}
+	EndGlobalSection
+EndGlobal
